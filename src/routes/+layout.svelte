@@ -2,14 +2,32 @@
 	import Tabs from "./Tabs.svelte";
     import { page } from '$app/stores';
     import { onMount } from 'svelte';
+    import { browser } from '$app/environment'; 
+
 	$:current = $page;
+    console.log(JSON.stringify($page));
+    let prompt = '//celes.in/C$/blog/'
+    $: $page && browser && (document.title = "Celesian's blog | " + $page.route.id);
+    $: $page && browser &&  updatePrompt($page.url);
+    function updatePrompt(page) {
+        if (browser){
+            
+            let url = new URL(page)
+            if (url){
+                prompt = `\\\\${url.hostname}${url.port != '' ? '%'+url.port : ''}\\C$\\inetpub\\wwwroot\\blog${url.pathname.replace('/','\\')}`
+
+            }
+
+        }
+    }
+
 
 </script>
 
 <main>
 	<div class="title">
 		<h1>celes.in</h1>
-		<h3 class="path">~ $ {current.route.id}</h3>
+		<h3 class="path">{prompt} </h3>
 	</div>
 	<Tabs />
 	<div>
