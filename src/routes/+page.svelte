@@ -1,1 +1,1 @@
-<p>This blog is dedicated to aiding you in sharing stories about web hacking, bug bounty, CTFs, and other experiments I come across. Here, you can find blog posts and write-ups that offer insight into each of these topics.</p>
+<p>This blog is dedicated to sharing stories about web hacking, bug bounty, CTFs, and other experiments I come across. Here, you can find blog posts and write-ups that offer insight into each of these topics.</p>
