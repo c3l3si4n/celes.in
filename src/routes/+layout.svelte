@@ -5,8 +5,7 @@
     import { browser } from '$app/environment'; 
 
 	$:current = $page;
-    let url = new URL($page.url)
-    let prompt = `\\\\${url.hostname}${url.port != '' ? '%'+url.port : ''}\\C$\\inetpub\\wwwroot\\blog${url.pathname.replace('/','\\')}`
+    let prompt = '\\\\celes.in\\C$\\inetpub\\wwwroot\\blog\\'
     $: $page && browser && (document.title = "Celesian's blog | " + $page.route.id);
     $: $page && browser &&  updatePrompt($page.url);
     function updatePrompt(page) {
@@ -30,7 +29,7 @@
 		<h3 class="path">{prompt} </h3>
 	</div>
 	<Tabs />
-	<div>
+	<div >
 		<slot></slot>
 	</div>
 </main>
@@ -84,6 +83,7 @@
 	.path {
 		color: #ffecc7;		
 		margin-left: auto;
+        font-size: 0.8em;
 	}
     
    

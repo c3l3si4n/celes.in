@@ -1,6 +1,8 @@
 
 <script>
     import Prism from 'prismjs';
+    import { fade } from 'svelte/transition';
+
 </script>
 <style>
     .post-title{
@@ -10,4 +12,4 @@
     }
 </style>
 
-<slot></slot>
+<div   ><slot></slot></div>
