@@ -27,6 +27,6 @@
     h3 {margin-bottom: 0.3vh;}
     main {margin-block-start: 0.1vh}
     ul { display: table;
-  margin: 0 auto;width:100%; text-transform:none}
+  margin: 0 auto;width:100%;}
   li{margin-bottom: 2vh; text-align: left;}
 </style>

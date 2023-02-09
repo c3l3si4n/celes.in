@@ -1,15 +1,15 @@
 <script>
 	import Tabs from "./Tabs.svelte";
-	import { page } from "$app/stores";
+    import { page } from '$app/stores';
     import { onMount } from 'svelte';
- 
-	$: path = $page.path ? $page.path : "/";
+	$:current = $page;
+
 </script>
 
 <main>
 	<div class="title">
 		<h1>celes.in</h1>
-		<h3 class="path">~ $ {path}</h3>
+		<h3 class="path">~ $ {current.route.id}</h3>
 	</div>
 	<Tabs />
 	<div>
