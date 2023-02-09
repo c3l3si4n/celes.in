@@ -5,8 +5,8 @@
     import { browser } from '$app/environment'; 
 
 	$:current = $page;
-    console.log(JSON.stringify($page));
-    let prompt = '//celes.in/C$/blog/'
+    let url = new URL($page.url)
+    let prompt = `\\\\${url.hostname}${url.port != '' ? '%'+url.port : ''}\\C$\\inetpub\\wwwroot\\blog${url.pathname.replace('/','\\')}`
     $: $page && browser && (document.title = "Celesian's blog | " + $page.route.id);
     $: $page && browser &&  updatePrompt($page.url);
     function updatePrompt(page) {
