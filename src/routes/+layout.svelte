@@ -3,7 +3,7 @@
     import { page } from '$app/stores';
     import { onMount } from 'svelte';
     import { browser } from '$app/environment'; 
-
+	let prompt = '\\\\celes.in\\C$\\inetpub\\wwwroot\\blog\\'
 	$:current = $page;
     $: $page && browser &&  updatePrompt($page);
     function updatePrompt(page) {
