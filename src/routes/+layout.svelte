@@ -10,10 +10,10 @@
     $: $page && browser &&  updatePrompt($page.url);
     function updatePrompt(page) {
         if (browser){
-            
-            let url = new URL(page)
-            if (url){
-                prompt = `\\\\${url.hostname}${url.port != '' ? '%'+url.port : ''}\\C$\\inetpub\\wwwroot\\blog${url.pathname.replace('/','\\')}`
+            if (page){
+				let url = page;
+                prompt = `\\\\${url.hostname}${url.port != '' ? '%'+url.port : ''}\\C$\\inetpub\\wwwroot\\blog${url.pathname.replaceAll('/','\\')}`
+				
 
             }
 
