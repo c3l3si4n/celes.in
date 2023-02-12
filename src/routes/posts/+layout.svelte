@@ -1,8 +1,6 @@
 
 <script>
     import Prism from 'prismjs';
-    import { fade } from 'svelte/transition';
-
 </script>
 <style>
     .post-title{
