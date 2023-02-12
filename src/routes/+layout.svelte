@@ -5,13 +5,13 @@
     import { browser } from '$app/environment'; 
 
 	$:current = $page;
-    let prompt = '\\\\celes.in\\C$\\inetpub\\wwwroot\\blog\\'
-    $: $page && browser && (document.title = "Celesian's blog | " + $page.route.id);
-    $: $page && browser &&  updatePrompt($page.url);
+    $: $page && browser &&  updatePrompt($page);
     function updatePrompt(page) {
         if (browser){
+			
             if (page){
-				let url = page;
+				document.title = "Celesian's blog | " + page.route.id
+				let url = page.url;
                 prompt = `\\\\${url.hostname}${url.port != '' ? '%'+url.port : ''}\\C$\\inetpub\\wwwroot\\blog${url.pathname.replaceAll('/','\\')}`
 				
 
