@@ -1,4 +1,6 @@
 <script>
+	import Prism from 'prismjs';
+
 	let code = `
 #include <stdio.h>
 #include <stdlib.h>
@@ -127,12 +129,5 @@ the applications themselves.
   .post-title{
         color: #f7c061;
     }
-    a {
-    color: #fdba47; /* unclicked link color */
-    text-decoration: none;
-  }
-
-  a:visited {
-    color: #a76900; /* visited link color */
-  }
+ 
 </style>
